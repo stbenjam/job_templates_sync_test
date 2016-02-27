@@ -1,0 +1,19 @@
+<%#
+name: Color Test
+job_category: Commands
+provider_type: SSH
+kind: job_template
+%>
+
+#!/usr/bin/env ruby
+
+require 'rainbow'
+
+colors = %i(black red green)
+methods = %i(to_s bright)
+
+colors.each do |color|
+  methods.each do |method|
+    puts Rainbow("The quick brown fox jumped over the lazy dog").send(color).send(method)
+  end
+end
